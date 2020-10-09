@@ -1,3 +1,12 @@
-<h1> <%= article.title %></h1>
-<p> <%= article.content %></p>
+<h1> <%= @article.title %></h1>
+<p> <%= @article.content %></p>
 
+
+<%= link_to "Back to Homepage", articles_path %>
+<br>
+<%= link_to "Edit Task", edit_article_path %>
+<br>
+<%= link_to "Delete #{@article.title}",
+                  article_path(@article.id),
+                  method: :delete,
+                  data: {confirm: "Are you sure?"} %>
